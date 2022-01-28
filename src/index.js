@@ -9,7 +9,7 @@ app.use('/', (req, res) => {
   res.send('Server');
 })
 
-app.use('/', router)
+app.use('/producto', require('./routes'))
 
 app.listen(PORT, (req, res) => {
   console.log(`It's Alive 🤖 http://localhost:${PORT}`)

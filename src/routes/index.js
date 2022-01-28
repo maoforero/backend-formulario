@@ -1,8 +1,22 @@
 const express = require('express');
-const router = express.Router();
+const { Router } = express;
+const routerPro = new Router;
 
-router.get('/producto', (req, res) => {
+routerPro.get('/producto', (req, res) => {
   res.send('producto');
 })
 
-module.exports = router;
+routerPro.post('/producto', (req, res) =>{
+  res.send('post')
+})
+
+routerPro.put('/producto', (req, res) =>{
+  res.send('put')
+})
+
+routerPro.delete('/producto', (req, res) =>{
+  res.send('delete')
+})
+
+
+module.exports = routerPro;
