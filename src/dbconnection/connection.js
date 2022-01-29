@@ -1,7 +1,7 @@
-const mongooser = require('mongoose');
+const mongoose = require('mongoose');
 
-const password = mao2656;
-const username = mao;
+const password = "mao2656";
+const username = "mao";
 
 const uri =  `mongodb+srv://<${username}>:<${password}>@dbch.yynea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 

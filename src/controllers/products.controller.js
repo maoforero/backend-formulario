@@ -1,7 +1,16 @@
 const productsController = {}
+const connection = require('../dbconnection/connection');
+const productsModel = require('../models/products.models');
 
-productsController.getProducts = (req, res) => {
-  res.send('Get Products');
+
+productsController.getProducts = async (req, res) => {
+  try{
+    await connection();
+    const allProducts = await productsModel.find();
+    console.log("CONNECTION OK")
+  }catch(err){
+    console.error(err);
+  }
 }
 
 productsController.postProducts = (req, res) => {
