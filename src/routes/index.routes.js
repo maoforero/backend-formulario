@@ -1,21 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('server get');
-})
+//Importando controller Index
+const controller = require('../controllers/index.controller');
 
-router.post('/', (req, res) =>{
-  res.send('server post')
-})
+router.get('/', controller.getIndex);
 
-router.put('/', (req, res) =>{
-  res.send('server put')
-})
+router.post('/', controller.postIndex);
 
-router.delete('/', (req, res) =>{
-  res.send('server delete')
-})
+router.put('/', controller.putIndex);
+
+router.delete('/', controller.deleteIndex);
 
 
 module.exports = router;

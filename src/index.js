@@ -6,7 +6,7 @@ const PORT = 3001;
 app.use(require('./routes/index.routes'));
 
 //router Productos
-app.use('/productos', require('./routes/productos.routes'));
+app.use('/productos', require('./routes/products.routes'));
 
 
 app.listen(PORT, (req, res) => {
