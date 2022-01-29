@@ -1,20 +1,16 @@
 const express = require('express');
 const routerPro = express.Router();
 
-routerPro.get('/', (req, res) => {
-  res.send('get producto');
-})
+//Controller products
+const Controller = require('../controllers/products.controller');
 
-routerPro.post('/', (req, res) => {
-  res.send('post producto');
-})
 
-routerPro.put('/', (req, res) => {
-  res.send('put producto');
-})
+routerPro.get('/', Controller.getProducts);
 
-routerPro.delete('/', (req, res) => {
-  res.send('delete producto');
-})
+routerPro.post('/', Controller.postProducts);
+
+routerPro.put('/', Controller.putProducts);
+
+routerPro.delete('/', Controller.deleteProducts);
 
 module.exports = routerPro;
