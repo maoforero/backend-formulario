@@ -3,7 +3,6 @@ const app = express();
 const routerApi = require('./routes/index.routes');
 const PORT = 3001;
 
-
 //router Index
 routerApi(app);
 
