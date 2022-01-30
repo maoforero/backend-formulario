@@ -1,16 +1,16 @@
 const express = require('express');
-const router = express.Router();
+const routerPro = require('./products.routes');
+const routerMsn = require('./msn.routes');
 
 //Importando controller Index
-const controller = require('../controllers/index.controller');
 
-router.get('/', controller.getIndex);
+function routerApi(app){
 
-router.post('/', controller.postIndex);
+  //master route
+  const router = express.Router();
+  app.use('/api', router)
+  router.use('/msn', routerMsn)
+  router.use('/products', routerPro);
+}
 
-router.put('/', controller.putIndex);
-
-router.delete('/', controller.deleteIndex);
-
-
-module.exports = router;
+module.exports = routerApi;
