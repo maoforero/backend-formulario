@@ -17,6 +17,4 @@ MsnController.deleteMsn = (req, res) => {
   res.send('Deleting Data')
 }
 
-
-
 module.exports = MsnController;
