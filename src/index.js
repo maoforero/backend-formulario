@@ -1,7 +1,8 @@
 const express = require('express');
+const { config } = require('./config');
 const app = express();
 const routerApi = require('./routes/index.routes');
-const PORT = 3001;
+const PORT = process.env.PORT;
 
 //router Index
 app.use("/", routerApi);
