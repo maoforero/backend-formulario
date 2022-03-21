@@ -1,12 +1,22 @@
 let { db } = require("./index");
 
-var mysql = require('knex')({
+let mysql = require('knex')({
   client: 'mysql',
   connection: {
-    host: db.host,
-    user: db.user,
-    password: db.password,
-    database: db.database
+    ...db
   },
   pool: {min: 0, max: 7}
 })
+
+class Database {
+  static client;
+  constructor(){
+    if(Database.client){
+      return Database.client;
+    }
+    Database.client = mysql;
+    this.client = Database.client;
+  }
+}
+
+module.exports = new Database();
